@@ -17,14 +17,14 @@ html {
   scroll-padding-top: 8.75rem;
 }
 
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1rem;
-  font-family: 'Inter', 'Poppins', sans-serif;
-}
+// body {
+//   display: grid;
+//   grid-template-rows: auto 1fr auto;
+//   align-items: center;
+//   min-height: 100vh;
+//   font-size: 1rem;
+//   font-family: 'Inter', 'Poppins', sans-serif;
+// }
 
 img {
   max-width: 100%;
@@ -81,6 +81,7 @@ h5 {
 
 h1 {
   font-size: 1.5rem; /* 24px */
+  font-weight: 500;
 }
 @media (min-width: 30rem) {
   /* 480px */

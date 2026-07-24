@@ -11,7 +11,8 @@
 
 .text {
 	font-size: rem(16);
-	line-height: 30px;
+	line-height: 28px;
+	color: $text-color;
 	& b,
 	& strong {
 		font-weight: 600;

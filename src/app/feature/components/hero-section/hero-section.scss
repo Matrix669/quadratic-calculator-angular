@@ -1,0 +1,13 @@
+@use '../../../../styles/colors' as *;
+@use '../../../../styles/functions' as *;
+
+.heroSection {
+    &__content {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        max-width: rem(625);
+        margin: 0 auto;
+        text-align: center;
+    }
+}
