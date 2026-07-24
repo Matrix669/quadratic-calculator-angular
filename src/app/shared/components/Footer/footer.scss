@@ -1,0 +1,21 @@
+@use '../../../../styles/functions' as *;
+@use '../../../../styles/colors' as *;
+
+.footer {
+  padding:  rem(20);
+  background-color: $footer-bg;
+  border-top: 1px solid #C6C5D7;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: rem(10);
+    > a {
+        font-size: rem(14);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+  }
+}
