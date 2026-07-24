@@ -1,0 +1,15 @@
+<section class="functionForms sectionPadding">
+  <app-wrapper>
+    <div class="functionForms__content">
+      @for (card of functionForms; track card.title) {
+        <app-function-card
+          [title]="card.title"
+          [description]="card.description"
+          [pattern]="card.pattern"
+          [path]="card.path"
+          [cssType]="card.cssType"
+        />
+      }
+    </div>
+  </app-wrapper>
+</section>

@@ -1,0 +1,19 @@
+@use '../../../../styles/functions' as *;
+@use '../../../../styles/colors' as *;
+
+.mainLink {
+  align-items: center;
+  justify-content: center;
+  padding: rem(8) rem(14);
+  background-color: $primary-color;
+  border-radius: 8px;
+  width: 100%;
+  color: #fff;
+  font-size: rem(12);
+  min-height: 36px;
+  transition: background-color 0.3s, width .3s ease-in-out;
+  &:hover {
+    background-color: $secondary-color;
+    width: 90%;
+  }
+}

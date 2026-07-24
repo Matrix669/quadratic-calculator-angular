@@ -1,0 +1,13 @@
+@use '../../../../styles/colors' as *;
+@use '../../../../styles/functions' as *;
+
+.functionForms {
+    padding-top: 0;
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(24);
+        flex-wrap: wrap;
+    }
+}

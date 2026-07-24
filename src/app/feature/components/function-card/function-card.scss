@@ -1,0 +1,58 @@
+@use '../../../../styles/colors' as *;
+@use '../../../../styles/functions' as *;
+
+.functionCard {
+  display: grid;
+  gap: rem(6);
+  width: 100%;
+  padding-top: 0;
+  border-radius: 12px;
+  padding: rem(32);
+  border: 1px solid #c6c5d7;
+
+  &__icon {
+    display: inline-flex;
+    width: fit-content;
+    border-radius: 8px;
+    padding: rem(8);
+    background-color: #e1e0ff;
+  }
+  h2 {
+    font-size: rem(22);
+  }
+  p {
+    color: $text-color;
+    line-height: 21px;
+    font-weight: 300;
+    font-size: rem(14);
+  }
+  &__functionForm {
+    display: flex;
+    align-items: center;
+    margin-top: rem(24);
+    margin-bottom: rem(12);
+    font-family: 'Poppins';
+    color: $primary-color;
+    background-color: #efecff;
+    border-radius: 8px;
+    padding: rem(10) rem(14);
+    &--canonical {
+      color: #006b5c;
+    }
+    &--product {
+      color: #a62a30;
+    }
+  }
+}
+
+@media (min-width: rem(576)) {
+  .functionCard {
+    max-width: rem(480);
+  }
+}
+@media (min-width: rem(992)) {
+  .functionCard {
+    max-width: rem(368);
+    min-height: rem(320);
+  }
+}
