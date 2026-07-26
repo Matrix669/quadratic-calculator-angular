@@ -1,5 +1,6 @@
 @use '../../../../../styles/colors' as *;
 @use '../../../../../styles/functions' as *;
+@use '../../../../../styles/components' as *;
 
 .functionCard {
   display: grid;
@@ -8,7 +9,7 @@
   padding-top: 0;
   border-radius: 12px;
   padding: rem(32);
-  border: 1px solid #c6c5d7;
+  border: 1px solid $border-color;
 
   &__icon {
     display: inline-flex;
@@ -26,23 +27,23 @@
     font-weight: 300;
     font-size: rem(14);
   }
-  &__functionForm {
-    display: flex;
-    align-items: center;
-    margin-top: rem(24);
-    margin-bottom: rem(12);
-    font-family: 'Poppins';
-    color: $primary-color;
-    background-color: #efecff;
-    border-radius: 8px;
-    padding: rem(10) rem(14);
-    &--canonical {
-      color: #006b5c;
-    }
-    &--product {
-      color: #a62a30;
-    }
-  }
+  // &__functionForm {
+  //   display: flex;
+  //   align-items: center;
+  //   margin-top: rem(24);
+  //   margin-bottom: rem(12);
+  //   font-family: 'Poppins';
+  //   color: $primary-color;
+  //   background-color: #efecff;
+  //   border-radius: 8px;
+  //   padding: rem(10) rem(14);
+  //   &--canonical {
+  //     color: #006b5c;
+  //   }
+  //   &--product {
+  //     color: #a62a30;
+  //   }
+  // }
 }
 
 @media (min-width: rem(576)) {

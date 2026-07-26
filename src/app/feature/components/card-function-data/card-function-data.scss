@@ -1,0 +1,80 @@
+@use '../../../../styles/colors' as *;
+@use '../../../../styles/functions' as *;
+
+.card {
+  padding: rem(20);
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  &__header {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  &__fields {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: rem(10);
+    margin-top: rem(12);
+    margin-bottom: rem(24);
+    & label {
+      display: grid;
+      gap: rem(5);
+      width: 100%;
+      color: $text-color;
+      font-weight: 300;
+      font-size: rem(14);
+      text-align: left;
+      & > input {
+        min-height: 30px;
+        padding: rem(12) rem(18);
+        border-radius: 8px;
+        border: 1px solid $border-color;
+        &:focus {
+          outline-color: $primary-color;
+        }
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: rem(10);
+
+    margin-top: rem(24);
+    padding-top: rem(12);
+    border-top: 1px solid $border-color;
+  }
+  &__tip {
+    max-width: rem(560);
+    text-align: left;
+    font-weight: 300;
+    color: $text-color;
+    & p:first-child {
+      color: $primary-color;
+      text-transform: uppercase;
+      font-size: rem(14);
+      letter-spacing: 0.9px;
+      margin-bottom: rem(6);
+      & > strong {
+        font-weight: bold;
+      }
+    }
+    & p:first-child + p {
+      font-weight: 300;
+      font-size: rem(12);
+    }
+  }
+}
+
+@media (min-width: rem(768)) {
+  .card {
+    &__fields {
+      flex-direction: row;
+      & label {
+        width: auto;
+      }
+    }
+  }
+}
