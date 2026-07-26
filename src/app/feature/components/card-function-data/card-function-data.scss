@@ -5,7 +5,11 @@
   padding: rem(20);
   border: 1px solid $border-color;
   border-radius: 8px;
-
+  &-error {
+    font-size: rem(12);
+    color: tomato;
+    font-weight: 500;
+  }
   button {
     display: inline-flex;
     align-items: center;

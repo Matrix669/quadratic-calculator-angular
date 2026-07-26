@@ -13,7 +13,12 @@
         [placeholder]="firstPlaceholder()"
         (input)="onFirstInput($event)"
         [value]="firstValue()"
-    /></label>
+      />
+      @if (firstError()) {
+        <p class="card-error">{{ firstError() }}</p>
+      }
+    </label>
+
     <label
       >{{ secondLabel()
       }}<input
@@ -21,8 +26,14 @@
         name=""
         [placeholder]="secondPlaceholder()"
         (input)="onSecondInput($event)"
-        [value]="secondValue()" /></label
-    ><label>
+        [value]="secondValue()"
+      />
+      @if (secondError()) {
+        <p class="card-error">{{ secondError() }}</p>
+      }
+    </label>
+
+    <label>
       {{ thirdLabel()
       }}<input
         type="number"
@@ -30,7 +41,11 @@
         [placeholder]="thirdPlaceholder()"
         (input)="onThirdInput($event)"
         [value]="thirdValue()"
-    /></label>
+      />
+      @if (thirdError()) {
+        <p class="card-error">{{ thirdError() }}</p>
+      }
+    </label>
   </div>
   <button class="mainLink" (click)="onCalculate()">
     <ng-icon name="lucideCalculator" /> Oblicz
