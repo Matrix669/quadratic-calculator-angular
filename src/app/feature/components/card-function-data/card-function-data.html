@@ -6,22 +6,41 @@
   </div>
   <div class="card__fields">
     <label>
-      {{ firstLabel()
-      }}<input type="number" name="" placeholder="{{ firstPlaceholder() }}" /></label
-    ><label
+      {{ firstLabel() }}
+      <input
+        type="number"
+        name=""
+        [placeholder]="firstPlaceholder()"
+        (input)="onFirstInput($event)"
+        [value]="firstValue()"
+    /></label>
+    <label
       >{{ secondLabel()
-      }}<input type="number" name="" placeholder="{{ secondPlaceholder() }}" /></label
+      }}<input
+        type="number"
+        name=""
+        [placeholder]="secondPlaceholder()"
+        (input)="onSecondInput($event)"
+        [value]="secondValue()" /></label
     ><label>
-      {{ thirdLabel() }}<input type="number" name="" placeholder="{{ thirdPlaceholder() }}"
+      {{ thirdLabel()
+      }}<input
+        type="number"
+        name=""
+        [placeholder]="thirdPlaceholder()"
+        (input)="onThirdInput($event)"
+        [value]="thirdValue()"
     /></label>
   </div>
-  <button class="mainLink">Oblicz</button>
+  <button class="mainLink" (click)="onCalculate()">
+    <ng-icon name="lucideCalculator" /> Oblicz
+  </button>
   <div class="card__footer">
     <ng-icon name="lucideLightbulb" size="24px" />
     <div class="card__tip">
       <p><strong>Porada</strong></p>
       <p>
-       {{hint()}}
+        {{ hint() }}
       </p>
     </div>
   </div>

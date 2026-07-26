@@ -5,6 +5,13 @@
   padding: rem(20);
   border: 1px solid $border-color;
   border-radius: 8px;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(4);
+  }
   &__header {
     display: grid;
     align-items: center;

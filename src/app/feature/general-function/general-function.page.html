@@ -1,14 +1,25 @@
 <app-main-section-content>
-  <app-card-function-data
-    typeForm="ogólnej"
-    pattern="f(x) = ax² + bx + c"
-    firstLabel="Współczynik a (a != 0)"
-    firstPlaceholder="Wprowadź a"
-    secondLabel="Współczynik  b"
-    secondPlaceholder="Wprowadź b"
-    thirdLabel="Współczynik c"
-    thirdPlaceholder="Wprowadź c"
-    hint=" Współczynnik 'a' decyduje o skierowaniu ramion paraboli. Jeśli a > 0, ramiona są skierowane
+  @if (!result()) {
+    <app-card-function-data
+      (calculate)="onCalculate($event)"
+      typeForm="ogólnej"
+      pattern="f(x) = ax² + bx + c"
+      firstLabel="Współczynik a (a != 0)"
+      firstPlaceholder="Wprowadź a"
+      secondLabel="Współczynik  b"
+      secondPlaceholder="Wprowadź b"
+      thirdLabel="Współczynik c"
+      thirdPlaceholder="Wprowadź c"
+      hint="Współczynnik 'a' decyduje o skierowaniu ramion paraboli. Jeśli a > 0, ramiona są skierowane
         w górę."
-  />
+    />
+  } @else {
+    <app-data-function
+      (reset)="onReset()"
+      [delta]="result()!.delta"
+      [zeroPoints]="result()!.zeroPointsResult"
+      [coordinates]="result()!.coordinatesResult"
+      [a]="result()!.first"
+    />
+  }
 </app-main-section-content>

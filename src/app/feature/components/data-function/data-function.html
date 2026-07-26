@@ -1,0 +1,72 @@
+<div class="dataFunction">
+  <div class="dataFunction__analysis">
+    <p class="dataFunction__analysis--title"><strong>Analiza funkcji</strong></p>
+    <div class="dataFunction__delta">
+      <div class="dataFunction__delta-result">
+        <p>Delta = {{ delta() | number: '1.0-3' }}</p>
+        @if (delta() > 0) {
+          <p>Delta > 0</p>
+        } @else if (delta() < 0) {
+          <p>Delta < 0</p>
+        } @else {
+          <p>Delta = 0</p>
+        }
+      </div>
+      @if (delta() > 0) {
+        <p class="dataFunction__delta-info">Równanie posiada 2 miejsca zerowe</p>
+      } @else if (delta() < 0) {
+        <p class="dataFunction__delta-info">Równanie nie posiada miejsc zerowych</p>
+      } @else {
+        <p class="dataFunction__delta-info">Równanie posiada 1 miejsce zerowe</p>
+      }
+    </div>
+    @if (zeroPoints().x1 !== null && zeroPoints().x2 !== null) {
+      <div class="dataFunction__info">
+        <p class="dataFunction__info-title">Miejsca zerowe</p>
+        <div class="dataFunction__infoData">
+          <p>x <sub>1</sub> = {{ zeroPoints().x1 | number: '1.0-3' }}</p>
+          <p>x <sub>2</sub> = {{ zeroPoints().x2 | number: '1.0-3' }}</p>
+        </div>
+      </div>
+    } @else if (zeroPoints().x1 !== null && zeroPoints().x2 === null) {
+      <div class="dataFunction__info">
+        <p class="dataFunction__info-title">Miejsca zerowe</p>
+        <div class="dataFunction__infoData">
+          <p>x <sub></sub> = {{ zeroPoints().x1 | number: '1.0-3'}}</p>
+        </div>
+      </div>
+    }
+    <div class="dataFunction__info">
+      <p class="dataFunction__info-title">Wierzchołek</p>
+      <div class="dataFunction__infoData">
+        <p>p = {{ coordinates().p | number: '1.0-3'}}</p>
+        <p>q = {{ coordinates().q | number: '1.0-3'}}</p>
+      </div>
+    </div>
+    <div class="dataFunction__info">
+      <p class="dataFunction__info-title">Inne postaci</p>
+      <div class="dataFunction__infoData">
+        <p>
+          <span>Kanoniczna:</span> f(x) = {{ a() }}(x - {{ coordinates().p | number: '1.0-3'}})² + ({{
+            coordinates().q| number: '1.0-3'
+          }})
+        </p>
+        @if (zeroPoints().x1 !== null && zeroPoints().x2 !== null) {
+          <p>
+            <span>Iloczynowa:</span>f(x) = {{ a() }}(x - {{ zeroPoints().x1 | number: '1.0-3'}})(x -
+            {{ zeroPoints().x2 | number: '1.0-3'}})
+          </p>
+        } @else if (zeroPoints().x1 !== null && zeroPoints().x2 === null) {
+          <p><span>Iloczynowa:</span>f(x) = {{ a() }}(x - {{ zeroPoints().x1 | number: '1.0-3'}})²</p>
+        }
+      </div>
+    </div>
+    <button class="mainLink" (click)="reset.emit()">Nowe obliczenia</button>
+  </div>
+  <div>
+    <p>Wykres funkcji</p>
+  </div>
+</div>
+<!-- <p>a = {{ result()!.first }}</p>
+<p>b = {{ result()!.second }}</p>
+<p>c = {{ result()!.third }}</p> -->
