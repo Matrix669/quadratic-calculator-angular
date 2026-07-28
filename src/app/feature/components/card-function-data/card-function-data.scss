@@ -2,9 +2,27 @@
 @use '../../../../styles/functions' as *;
 
 .card {
+  position: relative;
   padding: rem(20);
   border: 1px solid $border-color;
   border-radius: 8px;
+  z-index: 0;
+  &-backLink {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: rem(8) rem(20);
+    z-index: 10;
+    & ng-icon {
+      transition:
+        transform 0.3s,
+        color 0.3s;
+    }
+    &:hover ng-icon {
+      transform: translateX(-20px);
+      color: $primary-color;
+    }
+  }
   &-error {
     font-size: rem(12);
     color: tomato;

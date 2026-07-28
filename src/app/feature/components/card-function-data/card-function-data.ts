@@ -1,13 +1,14 @@
 import { Component, input, output, signal } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideCalculator, lucideLightbulb } from '@ng-icons/lucide';
+import { lucideCalculator, lucideLightbulb, lucideMoveLeft } from '@ng-icons/lucide';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-card-function-data',
-  imports: [NgIcon],
+  imports: [NgIcon, RouterLink],
   templateUrl: './card-function-data.html',
   styleUrls: ['./card-function-data.scss', '../../../shared/ui/main-link/main-link.scss'],
-  viewProviders: [provideIcons({ lucideLightbulb, lucideCalculator })],
+  viewProviders: [provideIcons({ lucideLightbulb, lucideCalculator, lucideMoveLeft })],
 })
 export class CardFunctionData {
   typeForm = input.required<string>();
