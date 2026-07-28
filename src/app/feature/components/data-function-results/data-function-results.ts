@@ -11,6 +11,9 @@ export class DataFunctionResults {
   reset = output<void>();
   
   a = input.required<number | null>()
+  b = input.required<number | null>()
+  c = input.required<number | null>()
+  
   delta = input.required<number>();
   zeroPoints = input.required<{ x1: number | null; x2: number | null }>();
   coordinates = input.required<{ p: number; q: number }>();

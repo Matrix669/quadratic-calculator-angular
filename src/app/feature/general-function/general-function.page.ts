@@ -1,12 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { MainSectionContent } from '../components/main-section-content/main-section-content';
 import { CardFunctionData } from '../components/card-function-data/card-function-data';
-import {
-  calculateFromGeneral,
-  coordinates,
-  generalDelta,
-  zeroPoints,
-} from '@/app/utils/functionCalculations';
+import { calculateFromGeneral } from '@/app/utils/functionCalculations';
 import { DataFunctionResults } from '../components/data-function-results/data-function-results';
 import { FunctionResults } from '@/app/types/quadratic';
 
@@ -22,7 +17,14 @@ export class GeneralFunction {
     console.log(values);
     const generalResult = calculateFromGeneral(values.first!, values.second!, values.third!);
     const { delta, zeroPointsResult, coordinatesResult } = generalResult;
-    this.result.set({ ...values, delta, zeroPointsResult, coordinatesResult });
+    this.result.set({
+      ...values,
+      delta,
+      zeroPointsResult,
+      coordinatesResult,
+      b: values.second,
+      c: values.third,
+    });
     console.log('delta: ', delta);
   }
   onReset(): void {

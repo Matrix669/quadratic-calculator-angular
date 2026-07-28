@@ -1,6 +1,7 @@
 <app-main-section-content>
   @if (!result()) {
     <app-card-function-data
+    (calculate)="onCalculate($event)"
       typeForm="kanonicznej"
       pattern="f(x) = a(x-p)² + q"
       firstLabel="Współczynik a (a != 0)"
@@ -18,6 +19,8 @@
       [zeroPoints]="result()!.zeroPointsResult"
       [coordinates]="result()!.coordinatesResult"
       [a]="result()!.first"
+      [b]="result()!.b"
+      [c]="result()!.c"
     />
   }
 </app-main-section-content>

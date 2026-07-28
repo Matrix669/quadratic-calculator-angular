@@ -32,32 +32,45 @@
       <div class="dataFunction__info">
         <p class="dataFunction__info-title">Miejsca zerowe</p>
         <div class="dataFunction__infoData">
-          <p>x <sub></sub> = {{ zeroPoints().x1 | number: '1.0-3'}}</p>
+          <p>x <sub></sub> = {{ zeroPoints().x1 | number: '1.0-3' }}</p>
         </div>
       </div>
     }
     <div class="dataFunction__info">
-      <p class="dataFunction__info-title">Wierzchołek</p>
+      <p class="dataFunction__info-title">Współczyniki</p>
       <div class="dataFunction__infoData">
-        <p>p = {{ coordinates().p | number: '1.0-3'}}</p>
-        <p>q = {{ coordinates().q | number: '1.0-3'}}</p>
+        <p>a = {{ a() | number: '1.0-3' }}</p>
+        <p>b = {{ b() | number: '1.0-3' }}</p>
+        <p>c = {{ c() | number: '1.0-3' }}</p>
       </div>
     </div>
     <div class="dataFunction__info">
-      <p class="dataFunction__info-title">Inne postaci</p>
+      <p class="dataFunction__info-title">Wierzchołek</p>
+      <div class="dataFunction__infoData">
+        <p>p = {{ coordinates().p | number: '1.0-3' }}</p>
+        <p>q = {{ coordinates().q | number: '1.0-3' }}</p>
+      </div>
+    </div>
+    <div class="dataFunction__info">
+      <p class="dataFunction__info-title">Postaci funkcji</p>
       <div class="dataFunction__infoData">
         <p>
-          <span>Kanoniczna:</span> f(x) = {{ a() }}(x - {{ coordinates().p | number: '1.0-3'}})² + ({{
-            coordinates().q| number: '1.0-3'
-          }})
+          <span>Ogólna:</span> f(x) = {{ a() | number: '1.0-3' }}x² + {{ b() | number: '1.0-3' }}x +
+          {{ c() | number: '1.0-3' }}
+        </p>
+        <p>
+          <span>Kanoniczna:</span> f(x) = {{ a() }}(x - {{ coordinates().p | number: '1.0-3' }})² +
+          ({{ coordinates().q | number: '1.0-3' }})
         </p>
         @if (zeroPoints().x1 !== null && zeroPoints().x2 !== null) {
           <p>
-            <span>Iloczynowa:</span>f(x) = {{ a() }}(x - {{ zeroPoints().x1 | number: '1.0-3'}})(x -
-            {{ zeroPoints().x2 | number: '1.0-3'}})
+            <span>Iloczynowa:</span>f(x) = {{ a() }}(x - {{ zeroPoints().x1 | number: '1.0-3' }})(x
+            - {{ zeroPoints().x2 | number: '1.0-3' }})
           </p>
         } @else if (zeroPoints().x1 !== null && zeroPoints().x2 === null) {
-          <p><span>Iloczynowa:</span>f(x) = {{ a() }}(x - {{ zeroPoints().x1 | number: '1.0-3'}})²</p>
+          <p>
+            <span>Iloczynowa:</span>f(x) = {{ a() }}(x - {{ zeroPoints().x1 | number: '1.0-3' }})²
+          </p>
         }
       </div>
     </div>
