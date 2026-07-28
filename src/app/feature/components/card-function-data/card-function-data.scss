@@ -6,6 +6,8 @@
   padding: rem(20);
   border: 1px solid $border-color;
   border-radius: 8px;
+  max-width: rem(644);
+  margin: 0 auto;
   z-index: 0;
   &-backLink {
     position: absolute;
@@ -101,9 +103,6 @@
   .card {
     &__fields {
       flex-direction: row;
-      & label {
-        width: auto;
-      }
     }
   }
 }

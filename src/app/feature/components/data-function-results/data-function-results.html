@@ -77,9 +77,13 @@
     <button class="mainLink" (click)="reset.emit()">Nowe obliczenia</button>
   </div>
   <div>
-    <p>Wykres funkcji</p>
+    <app-function-chart
+      [a]="a()!"
+      [b]="b()!"
+      [c]="c()!"
+      [p]="coordinates().p"
+      [q]="coordinates().q"
+      [zeroPoints]="zeroPoints()"
+    />
   </div>
 </div>
-<!-- <p>a = {{ result()!.first }}</p>
-<p>b = {{ result()!.second }}</p>
-<p>c = {{ result()!.third }}</p> -->

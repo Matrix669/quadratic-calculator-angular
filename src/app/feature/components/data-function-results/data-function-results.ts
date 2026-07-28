@@ -1,9 +1,10 @@
 import { DecimalPipe } from '@angular/common';
 import { Component, input, output } from '@angular/core';
+import { FunctionChart } from "@/app/shared/ui/function-chart/function-chart";
 
 @Component({
   selector: 'app-data-function-results',
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, FunctionChart],
   templateUrl: './data-function-results.html',
   styleUrls: ['./data-function-results.scss', '../../../shared/ui/main-link/main-link.scss'],
 })
