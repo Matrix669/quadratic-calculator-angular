@@ -10,7 +10,8 @@
   border-radius: 12px;
   padding: rem(32);
   border: 1px solid $border-color;
-
+  box-shadow: 0 10px 20px rgba(26, 26, 46, 0.08);
+  
   &__icon {
     display: inline-flex;
     width: fit-content;

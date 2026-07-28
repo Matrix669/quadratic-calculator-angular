@@ -4,17 +4,17 @@
 .dataFunction {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: rem(10);
+  gap: rem(20);
   &__analysis {
     display: grid;
     gap: rem(20);
     background-color: $card-bg;
     padding: rem(20) rem(24);
-    // width: 100%;
     border: 1px solid $border-color;
     border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(26, 26, 46, 0.08);
     &--title {
       font-size: rem(20);
       font-family: 'Poppins', 'Inter', sans-serif;
@@ -110,9 +110,9 @@
   }
 }
 
-@media (min-width: rem(639)) {
+@media (min-width: rem(768)) {
   .dataFunction {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: rem(460) 1fr;
     gap: rem(28);
     &__analysis {
       max-width: rem(460);

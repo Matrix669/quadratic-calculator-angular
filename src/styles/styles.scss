@@ -25,7 +25,9 @@ html {
 //   font-size: 1rem;
 //   font-family: 'Inter', 'Poppins', sans-serif;
 // }
-
+ng-icon {
+  color: $primary-color;
+}
 img {
   max-width: 100%;
   height: auto;

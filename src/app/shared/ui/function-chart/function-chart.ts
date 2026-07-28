@@ -5,6 +5,8 @@ import { LineChart, ScatterChart } from 'echarts/charts';
 import { GridComponent, TooltipComponent, DataZoomComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import { chartData } from '@/app/utils/functionChartData';
+import { provideIcons, NgIcon } from '@ng-icons/core';
+import { lucideChartSpline } from '@ng-icons/lucide';
 
 echarts.use([
   LineChart,
@@ -14,13 +16,14 @@ echarts.use([
   CanvasRenderer,
   DataZoomComponent,
 ]);
-// lucideChartSpline
+
 @Component({
   selector: 'app-function-chart',
-  imports: [NgxEchartsDirective],
+  imports: [NgxEchartsDirective, NgIcon],
   templateUrl: './function-chart.html',
   styleUrl: './function-chart.scss',
   providers: [provideEchartsCore({ echarts })],
+  viewProviders: [provideIcons({ lucideChartSpline })],
 })
 export class FunctionChart {
   a = input.required<number>();
@@ -82,7 +85,7 @@ export class FunctionChart {
         trigger: 'item',
         formatter: (params: any) => {
           const [x, y] = params.value;
-          
+
           if (params.name === 'Wierzchołek') {
             return `W = (${x.toFixed(3)}, ${y.toFixed(3)})`;
           }
@@ -90,11 +93,7 @@ export class FunctionChart {
           return `${params.name} = ${x.toFixed(3)}`;
         },
       },
-      dataZoom: [
-        { type: 'inside', xAxisIndex: 0, filterMode: 'none' },
-        // opcjonalnie:
-        // { type: 'slider', xAxisIndex: 0, height: 18 },
-      ],
+      dataZoom: [{ type: 'inside', xAxisIndex: 0, filterMode: 'none' }],
     };
   });
 }
