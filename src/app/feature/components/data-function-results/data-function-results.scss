@@ -112,6 +112,15 @@
 
 @media (min-width: rem(768)) {
   .dataFunction {
+    grid-template-columns: 1fr 1fr;
+    gap: rem(28);
+    &__analysis {
+      max-width: rem(460);
+    }
+  }
+}
+@media (min-width: rem(992)) {
+  .dataFunction {
     grid-template-columns: rem(460) 1fr;
     gap: rem(28);
     &__analysis {
