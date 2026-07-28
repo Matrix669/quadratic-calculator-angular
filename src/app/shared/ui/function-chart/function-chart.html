@@ -1,4 +1,11 @@
 <div class="chart">
-  <p><ng-icon name="lucideChartSpline" size="20px" /> <strong> Wykres funkcji</strong></p>
+  <div class="chart__header">
+    <p><ng-icon name="lucideChartSpline" size="20px" /> <strong> Wykres funkcji</strong></p>
+    <div class="chart__legend">
+      <p class="chart__legend-function"><span></span>Funkcja f(x)</p>
+      <p class="chart__legend-zeroPoints"><span></span>Miejsca zerowe</p>
+      <p class="chart__legend-coordinates"><span></span>Wierzchołek</p>
+    </div>
+  </div>
   <div class="functionChart" echarts [options]="chartOptions()"></div>
 </div>
