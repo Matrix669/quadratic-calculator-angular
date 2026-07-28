@@ -16,15 +16,52 @@
   height: 100%;
   box-shadow: 0 10px 20px rgba(26, 26, 46, 0.08);
   overflow: hidden;
-  & p {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: rem(8);
+  &__header {
     padding: rem(20);
-    font-size: rem(20);
-    strong {
-      font-weight: 500;
+    & > p {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: rem(8);
+      font-size: rem(20);
+      strong {
+        font-weight: 500;
+      }
+    }
+  }
+  &__legend {
+    color: $text-color;
+    font-size: rem(14);
+    margin-top: rem(10);
+    & p {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: rem(10);
+    }
+    &-function {
+      span {
+        display: block;
+        width: rem(20);
+        height: rem(2);
+        background-color: $primary-color;
+      }
+    }
+    &-zeroPoints,
+    &-coordinates {
+      & span {
+        display: block;
+        width: rem(10);
+        height: rem(10);
+        aspect-ratio: 1;
+        border-radius: 100%;
+      }
+    }
+    &-zeroPoints span {
+      background-color: $tertiary-color;
+    }
+    &-coordinates span {
+      background-color: $primary-color;
     }
   }
 }
