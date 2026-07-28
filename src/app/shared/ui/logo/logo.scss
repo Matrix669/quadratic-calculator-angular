@@ -1,0 +1,18 @@
+@use "../../../../styles/colors" as *;
+@use "../../../../styles/functions" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  a {
+    &:hover {
+        opacity: .6;
+    }
+    img {
+        padding: rem(5);
+        max-height: rem(64);
+    }
+  }
+}

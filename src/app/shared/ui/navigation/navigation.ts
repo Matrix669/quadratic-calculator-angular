@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Wrapper } from '../wrapper/wrapper';
-import { RouterLink } from '@angular/router';
+import { Logo } from '@/app/shared/ui/logo/logo';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss',
-  imports: [Wrapper, RouterLink],
+  imports: [Wrapper, Logo],
 })
 export class Navigation {}
