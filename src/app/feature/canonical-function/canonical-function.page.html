@@ -1,13 +1,23 @@
 <app-main-section-content>
-  <app-card-function-data
-    typeForm="kanonicznej"
-    pattern="f(x) = a(x-p)² + q"
-    firstLabel="Współczynik a (a != 0)"
-    firstPlaceholder="Wprowadź a"
-    secondLabel="Współrzędną  p"
-    secondPlaceholder="Wprowadź p"
-    thirdLabel="Współrzędną q"
-    thirdPlaceholder="Wprowadź q"
-    hint="Punkt (p, q) to współrzędne wierzchołka paraboli. Zmiana 'p' przesuwa wykres w poziomie, a 'q' w pionie."
-  />
+  @if (!result()) {
+    <app-card-function-data
+      typeForm="kanonicznej"
+      pattern="f(x) = a(x-p)² + q"
+      firstLabel="Współczynik a (a != 0)"
+      firstPlaceholder="Wprowadź a"
+      secondLabel="Współrzędną  p"
+      secondPlaceholder="Wprowadź p"
+      thirdLabel="Współrzędną q"
+      thirdPlaceholder="Wprowadź q"
+      hint="Punkt (p, q) to współrzędne wierzchołka paraboli. Zmiana 'p' przesuwa wykres w poziomie, a 'q' w pionie."
+    />
+  } @else {
+    <app-data-function-results
+      (reset)="onReset()"
+      [delta]="result()!.delta"
+      [zeroPoints]="result()!.zeroPointsResult"
+      [coordinates]="result()!.coordinatesResult"
+      [a]="result()!.first"
+    />
+  }
 </app-main-section-content>
