@@ -1,59 +1,60 @@
-# QudraticCalculator
+<h1>Quadratic Function Calculator · Angular</h1>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.7.
+<p>
+  <img src="https://img.shields.io/badge/Angular_22-232526?style=for-the-badge&logo=angular&logoColor=DFDFDF" alt="Angular">
+  <img src="https://img.shields.io/badge/TypeScript-232526?style=for-the-badge&logo=typescript&logoColor=DFDFDF" alt="TypeScript">
+  <img src="https://img.shields.io/badge/ECharts-232526?style=for-the-badge&logo=apacheecharts&logoColor=DFDFDF" alt="ECharts">
+  <img src="https://img.shields.io/badge/SCSS-232526?style=for-the-badge&logo=sass&logoColor=DFDFDF" alt="SCSS">
+</p>
 
-## Development server
+A calculator that analyses a quadratic function in any of its three forms (**general**, **vertex** or **factored**): it computes the discriminant, roots and vertex, converts between forms and plots the graph.
 
-To start a local development server, run:
+It's a rewrite of my earlier [React version](https://github.com/Matrix669/quadratic-function-calculator). I wanted to see what working with Angular is really like, on a project whose logic I already knew, so I could compare both approaches fairly. I also improved a few things along the way.
 
-```bash
-ng serve
-```
+![Home page: choosing one of the three forms of a quadratic function](./docs/screenshots/home.png)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features
 
-## Code scaffolding
+- **Three input forms:** general `ax² + bx + c`, vertex `a(x − p)² + q` and factored `a(x − x₁)(x − x₂)`
+- **Full analysis:** discriminant (Δ), roots, vertex and the function rewritten in the other forms
+- **Interactive graph:** the vertex and roots are marked as separate points, with tooltips showing their coordinates
+- **Form validation** with hints, e.g. about the sign of coefficient `a`
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+<table>
+  <tr>
+    <td><img src="./docs/screenshots/form.png" alt="Input form for the general form with fields for a, b and c"></td>
+    <td><img src="./docs/screenshots/results.png" alt="Analysis results next to the graph with the vertex and roots marked"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Entering coefficients</sub></td>
+    <td align="center"><sub>Results and graph</sub></td>
+  </tr>
+</table>
 
-```bash
-ng generate component component-name
-```
+## What changed compared to the React version
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Modern Angular throughout:** fully standalone components, the **Signals API** (`signal`, `input`, `output`, `computed`) instead of NgModules, and the new control-flow syntax (`@if`, `@for`)
+- **Chart.js → ngx-echarts:** a clearer graph with the vertex and roots marked separately, plus tooltips
+- Better presentation of the results and a custom logo
 
-```bash
-ng generate --help
-```
+![Graph tooltip with the vertex coordinates](./docs/screenshots/chart.png)
 
-## Building
+## Tech stack
 
-To build the project run:
+Angular 22 · TypeScript · Signals · ngx-echarts (ECharts) · ng-icons · SCSS · Vitest
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Running locally
 
 ```bash
-ng e2e
+npm install
+npm start        # ng serve → http://localhost:4200
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+```bash
+npm run build    # production build → dist/
+npm test         # unit tests (Vitest)
+```
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<sub>More of my projects → <a href="https://maxtkaczyk.pl"><b>maxtkaczyk.pl</b></a></sub>
